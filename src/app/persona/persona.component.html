@@ -1,0 +1,25 @@
+<div class="ui-g">
+<p-panel header="Administración de Personas" [style]="{width: '90%', margin: '0 auto'}">
+<!--lista de personas en value-->
+<p-table [value]="personas">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-persona>
+        <tr>
+            <td>{{persona.id}}</td>
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.direccion}}</td>
+            <td>{{persona.telefono}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+</p-panel>
+</div>
