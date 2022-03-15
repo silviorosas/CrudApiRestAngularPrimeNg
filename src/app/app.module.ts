@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { PersonaComponent } from './persona/persona.component';
 import { HttpClientModule } from '@angular/common/http';
 import {PanelModule} from 'primeng/panel';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     PanelModule,
     BrowserAnimationsModule
+    
 
   ],
   providers: [],

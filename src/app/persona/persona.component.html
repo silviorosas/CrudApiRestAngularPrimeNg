@@ -1,25 +1,30 @@
-<div class="ui-g">
-<p-panel header="Administración de Personas" [style]="{width: '90%', margin: '0 auto'}">
-<!--lista de personas en value-->
-<p-table [value]="personas">
-    <ng-template pTemplate="header">
+<div class="ui-g"> 
+<p-panel header="Gestión de Empleados" [style]="{width: '100%', margin: ' 0 auto'}" >
+<p-panel header="Administración de Personas" [style]="{width: '100%', margin: ' 0 auto'}"   >
+<!--lista de personas en value
+    la prodiedad [columns]= variable "cols" que está en persona.component.ts -->
+<p-table [value]="personas" [columns]="cols"  responsiveLayout="stack" breakpoint="280px" [paginator]="true"
+ [rows]="10" >
+ <!--agregamos la variable let columns-->
+    <ng-template pTemplate="header" let-columns>
         <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Dirección</th>
-            <th>Teléfono</th>
+  <!--recorremos la lista cols con ngFor para hacer dinamica la tabla-->          
+            <th *ngFor="let col of columns">
+                <!--llena las columnas con header que viene de persona.component.ts-->
+                {{col.header}}
+            </th>            
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-persona>
-        <tr>
-            <td>{{persona.id}}</td>
-            <td>{{persona.nombre}}</td>
-            <td>{{persona.apellido}}</td>
-            <td>{{persona.direccion}}</td>
-            <td>{{persona.telefono}}</td>
+    <ng-template pTemplate="body" let-persona let-columns="columns">
+        <tr >
+           <td *ngFor="let col of columns"> 
+           {{persona[col.field]}}
+        </td> 
         </tr>
     </ng-template>
 </p-table>
 </p-panel>
+</p-panel>
 </div>
+
+

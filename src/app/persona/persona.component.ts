@@ -10,7 +10,8 @@ import { PersonaService } from '../service/persona.service';
 export class PersonaComponent implements OnInit {
 //creo array personas
   //creo array personas
-  personas: Persona[] = [];
+  personas!: Persona[];
+  cols!: any[];
 
   //hago la inyeccion de dependencias en el contructor llamando al service de persona
   constructor(private personaService: PersonaService) { }
@@ -34,6 +35,13 @@ export class PersonaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAll();
+    this.cols=[
+      {field: "id", header: "Id"},
+      {field: "nombre", header: "Nombre"},
+      {field: "apellido", header: "Apellido"},
+      {field: "direccion", header: "Dirección"},
+      {field: "telefono", header: "Teléfono"}
+    ]
   }
 
 }
