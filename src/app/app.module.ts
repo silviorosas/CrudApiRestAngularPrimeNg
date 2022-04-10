@@ -15,11 +15,14 @@ import {InputTextModule} from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { ProductoComponent } from './producto/producto.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonaComponent
+    PersonaComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { MessageService } from 'primeng/api';
   ],
   providers: [
     MessageService
+  
   ],
   bootstrap: [AppComponent]
 })
